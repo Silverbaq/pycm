@@ -1,14 +1,15 @@
 __author__ = 'Silverbaq'
+#!/usr/bin/python
 
-
-class MenyScreen:
+class MenuScreen:
 
     import os
 
     ch = '='
     length = 78
 
-    def __init__(self, description, options):
+    def __init__(self, bannerTitle, description, options):
+        self.bannerTitle = bannerTitle
         self.description = description
         self.options = options
 
@@ -42,7 +43,7 @@ class MenyScreen:
         self.clearScreen()
 
         # Make banner for screen
-        banner = self.banner("somehting")
+        banner = self.banner(self.bannerTitle)
         print banner
 
         # Centers the description
