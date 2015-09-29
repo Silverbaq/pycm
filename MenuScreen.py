@@ -5,18 +5,24 @@ class MenyScreen:
 
     import os
 
+    ch = '='
+    length = 78
+
     def __init__(self, description, options):
         self.description = description
         self.options = options
 
-    def banner(self, text, ch='=', length=78):
+    def banner(self, text):
         spaced_text = ' %s ' % text
-        banner = '%s\n%s\n%s' % (ch*length,spaced_text.center(length, ch),ch*length)
+
+        # Makes the Banner String
+        banner = '%s\n%s\n%s' % (self.ch * self.length,spaced_text.center(self.length, self.ch), self.ch * self.length)
+
         return banner
 
-    def line(self, text, ch='=', length=78):
+    def line(self, text, ch='*'):
         spaced_text = ' %s ' % text
-        line = '\n%s\n' % spaced_text.center(length, ch)
+        line = '\n%s\n' % spaced_text.center(self.length, ch)
         return line
 
     # Checks the OS, and sends the clear command
@@ -25,6 +31,11 @@ class MenyScreen:
             self.os.system('cls')
         else:
             self.os.system('clear')
+
+    # Makes it able to chance the char and the length
+    def setConfiguration(self, char='=', length=78):
+        self.ch = char
+        self.length = length
 
     def displayIt(self):
         # Clears the screen
