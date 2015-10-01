@@ -1,5 +1,5 @@
-__author__ = 'Silverbaq'
 #!/usr/bin/python
+__author__ = 'Silverbaq'
 
 class MenuScreen:
 
